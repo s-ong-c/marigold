@@ -13,6 +13,8 @@
     "@marigold/theme-b2b": "workspace:*",
     "@marigold/tokens": "workspace:*",
     "@marigold/types": "workspace:*",
+    "@mdx-js/loader": "2.1.2",
+    "@next/mdx": "12.2.4",
     "estree-util-visit": "1.2.0",
     "fs-extra": "10.1.0",
     "globby": "13.1.2",
