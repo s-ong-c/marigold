@@ -3,7 +3,8 @@ import { visit } from 'unist-util-visit';
 import { Element, Root, Text } from 'hast';
 import { Transformer } from 'unified';
 
-/** @type {Options: {tocSelector: string} } */
+/** @typedef {string} options */
+/** @typedef {Element} node */
 
 export const rehypeTableOfContents = options => {
   return tree => {
