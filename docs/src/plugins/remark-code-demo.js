@@ -1,9 +1,6 @@
 import path from 'node:path';
 import fs from 'fs-extra';
 
-import { Code } from 'mdast';
-import { Transformer } from 'unified';
-
 import { flatMap, getExportedComponent, parseToMdAst } from './utils/ast';
 
 /**
