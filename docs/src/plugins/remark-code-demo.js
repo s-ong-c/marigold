@@ -1,7 +1,7 @@
 import path from 'node:path';
 import fs from 'fs-extra';
 
-import { flatMap, getExportedComponent, parseToMdAst } from './utils/ast';
+import * as ast from './utils/ast.js';
 
 /**
  * Very simple argument parser. Converts key=value pairs into
@@ -34,7 +34,7 @@ const isCodePreview = node =>
  */
 export const remarkCodeDemo = ({ demoPath, wrapperComponent }) => {
   return tree => {
-    flatMap(tree, node => {
+    ast.flatMap(tree, node => {
       if (!isCodePreview(node)) {
         return [node];
       }
@@ -46,8 +46,8 @@ export const remarkCodeDemo = ({ demoPath, wrapperComponent }) => {
       }
 
       const tree = meta.file
-        ? getExportedComponent(node.value, node.lang)
-        : parseToMdAst(node.value);
+        ? ast.getExportedComponent(node.value, node.lang)
+        : ast.parseToMdAst(node.value);
 
       const preview = {
         type: 'mdxJsxFlowElement',
