@@ -2,11 +2,11 @@
   "extends": ["config:base", ":semanticCommitTypeAll(chore)"],
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["before 3am on Sunday"]
+    "schedule": ["before 3am on the first day of the month"]
   },
   "packageRules": [
     {
-      "matchPackagePatterns": ["@react-aria", "@react-stately", "@react-types"],
+      "matchPackagePatterns": ["react-aria", "react-stately"],
       "groupName": "react-aria"
     },
     {
