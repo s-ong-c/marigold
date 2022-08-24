@@ -9,6 +9,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 /** @type {import('next').NextConfig} */
 const config = {
+  basePath: '/marigold',
   env: {
     version: pkg.version,
   },
