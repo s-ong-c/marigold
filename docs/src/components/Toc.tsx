@@ -13,9 +13,10 @@ export const Toc = ({ items, selector }: TocProps) => {
   const [, setMounted] = useState(false);
 
   const ref = useRef<Element>();
-
+  console.log('before effect');
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      console.log('client effect');
       ref.current = document.querySelector(selector) || undefined;
       setMounted(true);
     }
