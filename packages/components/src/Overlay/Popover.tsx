@@ -38,6 +38,7 @@ export const Popover = forwardRef(
     // FIXME: Why can't we use `useObjectRef` here?
     const fallbackRef = useRef(null);
     const popoverRef = ref || fallbackRef;
+
     const { overlayProps } = useOverlay(
       {
         isOpen: open,

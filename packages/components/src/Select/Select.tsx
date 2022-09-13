@@ -131,7 +131,6 @@ export const Select = forwardRef<HTMLButtonElement, SelectProps>(
       focusVisible: isFocusVisible,
       expanded: state.isOpen,
     });
-
     return (
       <FieldBase
         variant={variant}

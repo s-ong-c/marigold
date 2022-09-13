@@ -28,9 +28,10 @@ export const MenuTrigger = ({ disabled, children }: MenuTriggerProps) => {
   const { overlayProps: positionProps } = useOverlayPosition({
     targetRef: menuTriggerRef,
     overlayRef,
+    placement: 'bottom',
     isOpen: state.isOpen,
   });
-
+  console.log(state.isOpen);
   const menuContext: MenuContextProps = {
     ...menuProps,
     open: state.isOpen,
@@ -42,7 +43,7 @@ export const MenuTrigger = ({ disabled, children }: MenuTriggerProps) => {
   };
 
   return (
-    <MenuContext.Provider value={menuContext}>
+    <>
       <PressResponder
         {...menuTriggerProps}
         ref={menuTriggerRef}
@@ -50,16 +51,18 @@ export const MenuTrigger = ({ disabled, children }: MenuTriggerProps) => {
       >
         {menuTrigger}
       </PressResponder>
-      <Popover
-        open={state.isOpen}
-        onClose={state.close}
-        dismissable={true}
-        shouldCloseOnBlur={true}
-        ref={overlayRef}
-        {...positionProps}
-      >
-        {menu}
-      </Popover>
-    </MenuContext.Provider>
+      <MenuContext.Provider value={menuContext}>
+        <Popover
+          open={state.isOpen}
+          onClose={state.close}
+          dismissable={true}
+          shouldCloseOnBlur={true}
+          ref={overlayRef}
+          {...positionProps}
+        >
+          {menu}
+        </Popover>
+      </MenuContext.Provider>
+    </>
   );
 };
