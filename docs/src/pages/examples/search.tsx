@@ -9,18 +9,25 @@
  */
 import {
   Aside,
+  Body,
   Box,
   Button,
+  Card,
+  Center,
+  Header,
+  Headline,
   Image,
   Inline,
   MarigoldProvider,
   Split,
   Stack,
+  Table,
   TextField,
+  Container,
 } from '@marigold/components';
-import { Search } from '@marigold/icons';
-import { useState } from 'react';
-import useSWR, { Key, Fetcher } from 'swr';
+import { Eye, Search } from '@marigold/icons';
+import { SetStateAction, useState } from 'react';
+import useSWR from 'swr';
 
 import { Link, ThemeSelect, useThemeSwitch } from '~/components';
 
@@ -40,7 +47,7 @@ const Navigation = () => (
   </nav>
 );
 
-const SearchForm = ({ query, onSubmit }) => (
+const SearchForm = ({ query, onSubmit, onChange }) => (
   <form onSubmit={onSubmit}>
     <Inline space="small">
       <TextField
@@ -49,6 +56,7 @@ const SearchForm = ({ query, onSubmit }) => (
         placeholder="Search..."
         width="huge"
         value={query}
+        onChange={onChange}
       />
       <Button variant="primary" size="small" type="submit">
         <Search /> Search
@@ -57,6 +65,51 @@ const SearchForm = ({ query, onSubmit }) => (
   </form>
 );
 
+const DataList = data => {
+  const newData = data.getData?.results;
+
+  const onPress = () => {
+    console.log('onPress');
+  };
+
+  return (
+    <Table aria-label="Table">
+      <Table.Header>
+        <Table.Column>Details</Table.Column>
+        <Table.Column>Name</Table.Column>
+        <Table.Column>Homeworld</Table.Column>
+      </Table.Header>
+      <Table.Body>
+        {newData?.map(key => (
+          <Table.Row key={key.name}>
+            <Table.Cell>
+              <Button variant="primary" onPress={onPress} size="small">
+                <Eye />
+              </Button>
+            </Table.Cell>
+            <Table.Cell>{key.name}</Table.Cell>
+            <Table.Cell>{key.homeworld}</Table.Cell>
+          </Table.Row>
+        ))}
+      </Table.Body>
+    </Table>
+  );
+};
+
+const Details = () => {
+  return (
+    <Card aria-hidden="false">
+      <Header>
+        <Center>
+          <Headline level="2">Detail</Headline>
+        </Center>
+      </Header>
+      <Body>
+        <Container>Detailview from Search</Container>
+      </Body>
+    </Card>
+  );
+};
 export default () => {
   const { current, themes } = useThemeSwitch();
   const theme = (current && themes[current]) || themes.b2b2;
@@ -68,10 +121,17 @@ export default () => {
     fetcher
   );
 
-  const handleSubmit = ev => {
-    ev.preventDefault();
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    // Use FormData to get the input values
+    const formData = new FormData(event.target as HTMLFormElement);
+    // Optionally, convert FormData into an object
+    const dataObject = Object.fromEntries(formData);
+    event.target.reset();
+  };
 
-    console.log(ev);
+  const handleOnChange = (event: SetStateAction<string>) => {
+    setQuery(event);
   };
 
   return (
@@ -79,10 +139,14 @@ export default () => {
       <Box id="#search-example">
         <Stack space="xlarge">
           <Navigation />
-          <SearchForm query={query} onSubmit={handleSubmit} />
-          <Aside space="small">
-            <div style={{ width: '10em' }}>liste</div>
-            <div>details</div>
+          <SearchForm
+            query={query}
+            onSubmit={handleSubmit}
+            onChange={handleOnChange}
+          />
+          <Aside space="small" sideWidth="10em">
+            <DataList getData={data} />
+            <Details />
           </Aside>
         </Stack>
       </Box>
