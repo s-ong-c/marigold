@@ -68,8 +68,8 @@ const SearchForm = ({ query, onSubmit, onChange }) => (
 const DataList = data => {
   const newData = data.getData?.results;
 
-  const onPress = () => {
-    console.log('onPress');
+  const onPress = key => {
+    console.log(key);
   };
 
   return (
@@ -83,7 +83,11 @@ const DataList = data => {
         {newData?.map(key => (
           <Table.Row key={key.name}>
             <Table.Cell>
-              <Button variant="primary" onPress={onPress} size="small">
+              <Button
+                variant="primary"
+                onPress={() => onPress(key)}
+                size="small"
+              >
                 <Eye />
               </Button>
             </Table.Cell>
@@ -110,6 +114,8 @@ const Details = () => {
     </Card>
   );
 };
+
+// eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
   const { current, themes } = useThemeSwitch();
   const theme = (current && themes[current]) || themes.b2b2;
