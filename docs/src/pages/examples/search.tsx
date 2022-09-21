@@ -26,6 +26,7 @@ import {
   Container,
 } from '@marigold/components';
 import { Eye, Search } from '@marigold/icons';
+import React from 'react';
 import { SetStateAction, useState } from 'react';
 import useSWR from 'swr';
 
@@ -67,40 +68,46 @@ const SearchForm = ({ query, onSubmit, onChange }) => (
 
 const DataList = data => {
   const newData = data.getData?.results;
+  const [state, setState] = useState('');
 
-  const onPress = key => {
-    console.log(key);
+  const onPressHandler = key => {
+    setState(key);
+    return state;
   };
 
   return (
-    <Table aria-label="Table">
-      <Table.Header>
-        <Table.Column>Details</Table.Column>
-        <Table.Column>Name</Table.Column>
-        <Table.Column>Homeworld</Table.Column>
-      </Table.Header>
-      <Table.Body>
-        {newData?.map(key => (
-          <Table.Row key={key.name}>
-            <Table.Cell>
-              <Button
-                variant="primary"
-                onPress={() => onPress(key)}
-                size="small"
-              >
-                <Eye />
-              </Button>
-            </Table.Cell>
-            <Table.Cell>{key.name}</Table.Cell>
-            <Table.Cell>{key.homeworld}</Table.Cell>
-          </Table.Row>
-        ))}
-      </Table.Body>
-    </Table>
+    <>
+      <Table aria-label="Table">
+        <Table.Header>
+          <Table.Column>Details</Table.Column>
+          <Table.Column>Name</Table.Column>
+          <Table.Column>Homeworld</Table.Column>
+        </Table.Header>
+        <Table.Body>
+          {newData?.map(key => (
+            <Table.Row key={key.name}>
+              <Table.Cell>
+                <Button
+                  variant="primary"
+                  onPress={() => onPressHandler(key)}
+                  size="small"
+                >
+                  <Eye />
+                </Button>
+              </Table.Cell>
+              <Table.Cell>{key.name}</Table.Cell>
+              <Table.Cell>{key.homeworld}</Table.Cell>
+            </Table.Row>
+          ))}
+        </Table.Body>
+      </Table>
+      <Details detailData={state} />
+    </>
   );
 };
 
-const Details = () => {
+const Details = detailData => {
+  console.log(detailData);
   return (
     <Card aria-hidden="false">
       <Header>
@@ -109,7 +116,9 @@ const Details = () => {
         </Center>
       </Header>
       <Body>
-        <Container>Detailview from Search</Container>
+        <Container>
+          Detailview from Search: {detailData.detailData.name}
+        </Container>
       </Body>
     </Card>
   );
@@ -152,7 +161,6 @@ export default () => {
           />
           <Aside space="small" sideWidth="10em">
             <DataList getData={data} />
-            <Details />
           </Aside>
         </Stack>
       </Box>
