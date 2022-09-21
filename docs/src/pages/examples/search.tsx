@@ -66,7 +66,7 @@ const SearchForm = ({ query, onSubmit, onChange }) => (
   </form>
 );
 
-const DataList = data => {
+const ResultLayout = data => {
   const newData = data.getData?.results;
   const [state, setState] = useState('');
 
@@ -76,7 +76,7 @@ const DataList = data => {
   };
 
   return (
-    <>
+    <Aside space="small" sideWidth="10em">
       <Table aria-label="Table">
         <Table.Header>
           <Table.Column>Details</Table.Column>
@@ -101,8 +101,8 @@ const DataList = data => {
           ))}
         </Table.Body>
       </Table>
-      <Details detailData={state} />
-    </>
+      {state ? <Details detailData={state} /> : <div>empty state</div>}
+    </Aside>
   );
 };
 
@@ -159,9 +159,8 @@ export default () => {
             onSubmit={handleSubmit}
             onChange={handleOnChange}
           />
-          <Aside space="small" sideWidth="10em">
-            <DataList getData={data} />
-          </Aside>
+
+          <ResultLayout getData={data} />
         </Stack>
       </Box>
     </MarigoldProvider>
