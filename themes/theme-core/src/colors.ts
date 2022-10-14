@@ -40,3 +40,15 @@ export const colors = {
   yellow70: '#eac500',
   yellow80: '#ae8a0a',
 } as const;
+
+export const themeColors = {
+  text: '#511e04',
+  background: colors.gray10,
+  primary: colors.orange60,
+  secondary: colors.gray70,
+  disabled: colors.gray40,
+  error: '#f33',
+  warning: '#d80',
+  info: '#008',
+  success: '#080',
+} as const;

@@ -1,7 +1,8 @@
 import type { Theme } from '@marigold/components';
 
-import { colors } from './colors';
+import { colors, themeColors } from './colors';
 import * as components from './components';
+import { semanticColors } from './semantic-colors';
 
 const theme: Theme = {
   breakpoints: ['40em', '52em', '64em'],
@@ -29,15 +30,8 @@ const theme: Theme = {
   },
   colors: {
     ...colors,
-    text: '#511e04',
-    background: colors.gray10,
-    primary: colors.orange60,
-    secondary: colors.gray70,
-    disabled: colors.gray40,
-    error: '#f33',
-    warning: '#d80',
-    info: '#008',
-    success: '#080',
+    ...themeColors,
+    ...semanticColors,
   },
   root: {
     body: {
