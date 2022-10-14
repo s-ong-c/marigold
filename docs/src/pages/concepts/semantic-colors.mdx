@@ -1,0 +1,28 @@
+---
+title: Semantic Colors
+---
+
+## Warum führen wir semantische Farben ein?
+
+Bei der Entwicklung von UI Elementen spielt das Festlegen von Farben und deren Einsatz eine zentrale Rolle. Dafür wird von dem UX/UI Designer eine Farbpalette definiert und die Informationen an den Entwickler bereitgestellt.
+Der Entwickler hinterlegt nun diese Farben im Code. In der Regel verwendet er dafür dann Farbvariablen. Dies hat den Vorteil, dass bei einer Anpassung z.B. des Blautons nur der Wert innerhalb der Farbvariablen angepasst werden muss und nicht noch innerhalb der CSS Klassen.
+Leider passiert es aber immer wieder gelegentlich, dass aus Gründen innerhalb der CSS nicht die Farbvariablen verwendet werden, sondern direkt der HEX-Wert eingegeben wird.
+(BSP -> ListBox | Link)
+Dies führt dann teilweise zu einem erhöhten Wartungsaufwand.
+Um dies zu vermeiden und eine klare Struktur vorzugeben, sollten zwingend immer die Variablen verwendet und zusätzlich semantische Farben eingeführt werden.
+
+## Vorteile von semantischen Farben?
+
+Durch das Definieren von semantischen Farben sprechen die Designer und Entwickler die gleiche Sprache. Dafür werden die Elemente, ihre Farbrollen und Interaktivitäten definiert.
+Wird nun über ein spezifisches Element geredet, so sollte jeder auch direkt ihre Farbrolle sowie Interaktivität kennen. Dadurch soll verhindert werden, dass ein Element aus Versehen ein andere hover Farbe hat wie alle anderen Elemente mit der gleichen Farbrolle.
+
+Ein weiterer Vorteil von semantischen Farben ist, dass die neuen Designer und Entwickler schneller die Struktur der Komponenten und deren Aufbau verstehen können.
+
+## Wie setzen sich die semantischen Farben zusammen?
+
+1. Grundfarbpalette die alle Farben
+2. Benennung der semantischen Farben die anhand der Grundfarbpalette verfügbar sind.
+
+--> Color Token hinterlegen.
+
+--> semantische Farben aufzeigen (Mehrer Komponenten damit umsetzen?).
