@@ -51,4 +51,8 @@ export const themeColors = {
   warning: '#d80',
   info: '#008',
   success: '#080',
+  cardBackground: '#fafaf8',
+  dialogBackground: '#ecebe6',
+  input: '#aaa',
+  link: '#900',
 } as const;

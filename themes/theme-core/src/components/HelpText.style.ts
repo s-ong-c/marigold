@@ -4,10 +4,10 @@ export const HelpText: Theme['components']['HelpText'] = {
   base: {
     container: {
       fontSize: 'xxsmall',
-      color: 'text',
+      color: 'helpTextColor.base',
       '&:error': {
         fontSize: 'xxsmall',
-        color: 'error',
+        color: 'helpTextColor.base.error',
       },
     },
     icon: {

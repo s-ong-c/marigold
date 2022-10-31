@@ -4,7 +4,7 @@ export const Divider: Theme['components']['Divider'] = {
   base: {
     width: '100%',
     height: '1px',
-    bg: 'text',
+    bg: 'dividerBackground.base',
   },
   variant: {
     bold: {

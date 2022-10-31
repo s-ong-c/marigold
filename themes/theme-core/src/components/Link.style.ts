@@ -2,7 +2,7 @@ import { Theme } from '@marigold/components';
 
 export const Link: Theme['components']['Link'] = {
   base: {
-    color: '#900',
+    color: 'linkColor.base',
     '&:hover, &:visited': {
       textDecoration: 'underline',
       cursor: 'pointer',
@@ -13,11 +13,11 @@ export const Link: Theme['components']['Link'] = {
   },
   variant: {
     menuItemLink: {
-      color: 'text',
+      color: 'linkColor.menuItemLink',
       textDecoration: 'none',
     },
     cardText: {
-      color: 'text',
+      color: 'linkColor.cardText',
       fontWeight: 'bold',
       '&:hover': {
         textDecoration: 'none',

@@ -19,6 +19,13 @@ export default {
       description: 'Hint that the related control required',
       defaultValue: false,
     },
+    disabled: {
+      control: {
+        type: 'boolean',
+      },
+      description: 'Disabled',
+      defaultValue: false,
+    },
   },
 } as Meta;
 

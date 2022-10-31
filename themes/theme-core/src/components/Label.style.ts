@@ -3,9 +3,9 @@ import { Theme } from '@marigold/components';
 export const Label: Theme['components']['Label'] = {
   base: {
     fontSize: 'xxsmall',
-    color: 'text',
+    color: 'labelColor.base',
     '&:disabled': {
-      color: 'gray40',
+      color: 'labelColor.base.disabled',
     },
     '&:required': {
       fontWeight: 'bold',
