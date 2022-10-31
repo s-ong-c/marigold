@@ -17,8 +17,9 @@ export const Clamp = ({
   <Box
     css={{
       p: space,
+      overflow: 'auto',
       maxHeight: `min(${height?.join(',')})`,
-      maxWidth: `min(${width?.join(',')})`,
+      maxWidth: `min(${width?.join(',')}`,
     }}
   >
     {children}
