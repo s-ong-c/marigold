@@ -1,10 +1,12 @@
 import type { Theme } from '@marigold/components';
 
+import { semanticColors } from '../semantic-colors';
+
 export const ListBox: Theme['components']['ListBox'] = {
   base: {
     container: {
       fontSize: 'xxsmall',
-      background: 'gray00',
+      background: 'listBoxBackground.base',
 
       px: 'xxsmall',
       pb: 'xxsmall',
@@ -15,17 +17,17 @@ export const ListBox: Theme['components']['ListBox'] = {
       borderBottom: '1px solid',
       borderBottomRightRadius: '2px',
       borderBottomLeftRadius: '2px',
-      borderColor: '#aaa',
+      borderColor: 'listBoxBoarderColor.base',
 
       '&:error': {
-        background: 'gray00',
+        background: 'listBoxBackground.base.error',
         borderTop: 'none',
         borderRight: '1px solid',
         borderLeft: '1px solid',
         borderBottom: '1px solid',
         borderBottomRightRadius: '2px',
         borderBottomLeftRadius: '2px',
-        borderColor: 'error',
+        borderColor: 'listBoxBoarderColor.base.error',
       },
     },
 
@@ -41,7 +43,7 @@ export const ListBox: Theme['components']['ListBox'] = {
     },
 
     option: {
-      color: 'text',
+      color: 'listBoxColor.option',
       fontSize: 'xxsmall',
       lineHeight: 'medium',
 
@@ -51,23 +53,23 @@ export const ListBox: Theme['components']['ListBox'] = {
       p: '0 6px 0 15px',
 
       '&:focus': {
-        color: 'gray00',
-        bg: '#3875d7',
-        backgroundImage: 'linear-gradient(#3875d7 20%, #2a62bc 90%)',
+        color: 'listBoxColor.option.focus',
+        bg: 'listBoxBackground.option.focus',
+        backgroundImage: `linear-gradient(${semanticColors.listBoxBackgroundImage.option.focus.colorStopOne} 20%, ${semanticColors.listBoxBackgroundImage.option.focus.colorStopTwo} 90%)`,
       },
 
       '&:selected': {
-        color: 'gray00',
-        bg: '#3875d7',
-        backgroundImage: 'linear-gradient(#3875d7 20%, #2a62bc 90%)',
+        color: 'listBoxColor.option.selected',
+        bg: 'listBoxBackground.option.selected',
+        backgroundImage: `linear-gradient(${semanticColors.listBoxBackgroundImage.option.selected.colorStopOne} 20%, ${semanticColors.listBoxBackgroundImage.option.selected.colorStopTwo} 90%)`,
       },
 
       '&:disabled': {
         cursor: 'not-allowed',
-        color: 'gray40',
+        color: 'listBoxColor.option.disabled',
       },
       '&:hover': {
-        bg: 'blue60',
+        bg: 'listBoxBackground.option.hover',
       },
     },
   },

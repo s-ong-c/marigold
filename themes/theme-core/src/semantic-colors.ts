@@ -34,6 +34,11 @@ export const boxShadow = {
   card: '#a5a5a540',
 };
 
+export const linearGradientColor = {
+  colorStopOne: '#3875d7',
+  colorStopTwo: '#2a62bc',
+};
+
 export const semanticColors = {
   // Second Iteretation
   buttonBackground: {
@@ -259,7 +264,94 @@ export const semanticColors = {
       __default: themeColors.text,
     },
   },
+
+  listBoxBackground: {
+    base: {
+      __default: colors.gray00,
+
+      // Why on error => gray00 ???
+      error: {
+        __default: colors.gray00,
+      },
+    },
+
+    option: {
+      focus: {
+        __default: '#3875d7',
+      },
+      selected: {
+        __default: '#3875d7',
+      },
+      hover: {
+        __default: colors.blue60,
+      },
+    },
+  },
+
+  listBoxBackgroundImage: {
+    option: {
+      focus: {
+        colorStopOne: linearGradientColor.colorStopOne,
+        colorStopTwo: linearGradientColor.colorStopTwo,
+      },
+      selected: {
+        colorStopOne: linearGradientColor.colorStopOne,
+        colorStopTwo: linearGradientColor.colorStopTwo,
+      },
+    },
+  },
+
+  listBoxBoarderColor: {
+    base: {
+      __default: themeColors.input,
+
+      error: {
+        __default: themeColors.error,
+      },
+    },
+  },
+
+  listBoxColor: {
+    option: {
+      __default: themeColors.text,
+      focus: {
+        __default: colors.gray00,
+      },
+      selected: {
+        __default: colors.gray00,
+      },
+      disabled: {
+        __default: disabledColor.label,
+      },
+    },
+  },
+
+  menuBackground: {
+    base: {
+      __default: colors.gray00,
+    },
+    item: {
+      hover: {
+        __default: colors.blue60,
+      },
+    },
+  },
+
+  menuColor: {
+    item: {
+      hover: {
+        __default: 'colors.gray00',
+      },
+    },
+  },
+
+  messageBackground: {
+    base: {
+      __default: colors.gray10,
+    },
+  },
 };
+console.log(semanticColors.listBoxBackgroundImage.option.focus);
 
 // First Iteretation
 //   button: {

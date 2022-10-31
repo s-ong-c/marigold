@@ -8,7 +8,7 @@ export const Message: Theme['components']['Message'] = {
       pb: 'small',
       px: 'small',
       fontSize: 'xxsmall',
-      bg: 'gray10',
+      bg: 'messageBackground.base',
     },
     title: {
       lineHeight: 'large',
