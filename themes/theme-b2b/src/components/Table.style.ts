@@ -2,39 +2,42 @@ import type { Theme } from '@marigold/components';
 
 export const Table: Theme['components']['Table'] = {
   base: {
-    table: { borderCollapse: 'collapse', fontSize: 'xxsmall' },
+    table: {
+      borderCollapse: 'collapse',
+      fontSize: 'xxsmall',
+    },
     header: {
       py: 'small',
       px: 'small',
       cursor: 'default',
-      color: 'gray70',
+      color: 'tableColor.base.header',
       textAlign: 'left',
       borderBottom: '1px solid',
-      borderColor: 'gray50',
+      borderColor: 'tableBorder.base.header',
 
       '&:focus': {
-        outlineColor: 'orange60',
+        outlineColor: 'tableOutline.base.header.focus',
       },
     },
     row: {
       '&:selected': {
-        bg: 'orange10',
+        bg: 'tableColor.row.selected',
       },
       '&[data-hover]': {
-        bg: 'gray20',
+        bg: 'tableColor.row.dataHover',
       },
       '&:focus-visible': {
-        outlineColor: 'orange60',
+        outlineColor: 'tableOutline.base.row.focusVisible',
       },
     },
     cell: {
       py: 'small',
       px: 'small',
-      color: 'gray70',
+      color: 'tableColor.base.cell',
       borderBottom: '1px solid',
-      borderColor: 'gray50',
+      borderColor: 'tableBorder.base.cell',
       '&:focus': {
-        outlineColor: 'orange60',
+        outlineColor: 'tableOutline.base.cell.focus',
       },
     },
   },

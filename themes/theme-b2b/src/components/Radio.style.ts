@@ -6,14 +6,14 @@ export const Radio: Theme['components']['Radio'] = {
       fontSize: 'xsmall',
 
       '&:disabled': {
-        color: 'gray40',
+        color: 'radioColor.base.disabled',
       },
     },
     radio: {
-      borderColor: 'gray40',
+      borderColor: 'radioBorder.radio',
 
       '&:hover': {
-        borderColor: 'gray50',
+        borderColor: 'radioBorder.radio.hover',
       },
 
       '&:focus': {
@@ -23,14 +23,14 @@ export const Radio: Theme['components']['Radio'] = {
       },
 
       '&:checked': {
-        color: 'white',
-        borderColor: 'orange80',
-        bg: 'primary',
+        color: 'radioColor.radio.checked',
+        borderColor: 'radioBorder.radio.checked',
+        bg: 'radioBackground.radio.checked',
       },
 
       '&:disabled': {
-        bg: 'gray30',
-        borderColor: 'gray40',
+        bg: 'radioBackground.radio.disabled',
+        borderColor: 'radioBorder.radio.disabled',
       },
     },
   },

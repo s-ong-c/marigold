@@ -1,31 +1,32 @@
 import type { Theme } from '@marigold/components';
 import { colors } from '../colors';
+import { semanticColors } from '../semantic-colors';
 
 export const NumberField: Theme['components']['NumberField'] = {
   base: {
     group: {
       border: '1px solid',
-      borderColor: 'gray40',
+      borderColor: 'numberFieldBorder.base',
       borderRadius: 'small',
 
       '&:hover': {
-        borderColor: 'gray50',
+        borderColor: 'numberFieldBorder.base.hover',
       },
 
       '&:focus': {
-        borderColor: 'orange60',
+        borderColor: 'numberFieldBorder.base.focus',
         boxShadow: `0 0 0 1px ${colors.orange60}`,
       },
 
       '&:disabled': {
-        bg: 'gray20',
+        bg: 'numberFieldBackground.base.disabled',
         color: 'gray40',
         cursor: 'not-allowed',
       },
 
       '&:error': {
-        borderColor: 'red60',
-        boxShadow: `0 0 0 1px ${colors.red60}`,
+        borderColor: 'numberFieldBorder.base.error',
+        boxShadow: `0 0 0 1px ${semanticColors.numberFieldBoxShadow.base.error}`,
       },
     },
     stepper: {
@@ -34,16 +35,16 @@ export const NumberField: Theme['components']['NumberField'] = {
 
       '&:nth-of-type(1)': {
         borderRight: '1px solid',
-        borderColor: 'gray40',
+        borderColor: 'numberFieldBorder.stepper.firstOfType',
       },
       '&:nth-of-type(2)': {
         borderLeft: '1px solid',
-        borderColor: 'gray40',
+        borderColor: 'numberFieldBorder.stepper.secondOfType',
       },
 
       '&:hover': {
         color: 'gray90',
-        bg: 'gray10',
+        bg: 'numberFieldBackground.stepper.hover',
       },
 
       '&:disabled': {
@@ -51,15 +52,15 @@ export const NumberField: Theme['components']['NumberField'] = {
       },
 
       '&:hover-group': {
-        borderColor: 'gray50',
+        borderColor: 'numberFieldBackground.stepper.hoverGroup',
       },
 
       '&:focus-group': {
-        borderColor: 'orange60',
+        borderColor: 'numberFieldBackground.stepper.focusGroup',
       },
 
       '&:error-group': {
-        borderColor: 'red60',
+        borderColor: 'numberFieldBackground.stepper.errorGroup',
       },
     },
   },

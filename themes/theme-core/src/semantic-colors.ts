@@ -1,4 +1,3 @@
-import theme from '.';
 import { colors, themeColors } from './colors';
 
 /**
@@ -340,7 +339,7 @@ export const semanticColors = {
   menuColor: {
     item: {
       hover: {
-        __default: 'colors.gray00',
+        __default: colors.gray00,
       },
     },
   },
@@ -351,7 +350,6 @@ export const semanticColors = {
     },
   },
 };
-console.log(semanticColors.listBoxBackgroundImage.option.focus);
 
 // First Iteretation
 //   button: {

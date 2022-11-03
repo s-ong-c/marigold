@@ -1,10 +1,11 @@
 import type { Theme } from '@marigold/components';
+import { semanticColors } from '../semantic-colors';
 
 export const Card: Theme['components']['Card'] = {
   base: {
-    bg: 'gray00',
+    bg: 'cardBackground.base',
     p: 'small',
-    boxShadow: '0px 4px 4px rgba(165, 165, 165, 0.25)',
+    boxShadow: `0px 4px 4px ${semanticColors.cardBoxShadow.base}`,
     borderRadius: 'large',
   },
 };

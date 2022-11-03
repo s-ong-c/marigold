@@ -11,55 +11,55 @@ export const Button: Theme['components']['Button'] = {
 
     '&[data-focus-visible]': {
       outline: '1px solid',
-      outlineColor: 'primary',
+      outlineColor: 'buttonBackground.base.focusVisible',
       outlineOffset: '1px',
     },
 
     '&:disabled': {
-      color: 'gray40',
-      bg: 'gray20',
+      color: 'buttonColor.base.disabled',
+      bg: 'buttonBackground.base.disabled',
     },
   },
   variant: {
     primary: {
-      color: 'background',
-      bg: 'primary',
+      color: 'buttonColor.primary',
+      bg: 'buttonBackground.primary',
       '&:hover': {
-        color: 'background',
-        bg: 'orange40',
+        color: 'buttonColor.primary.hover',
+        bg: 'buttonBackground.primary.hover',
       },
     },
     secondary: {
-      color: 'background',
-      bg: 'secondary',
+      color: 'buttonColor.secondary',
+      bg: 'buttonBackground.secondary',
       '&:hover': {
-        color: 'background',
-        bg: 'gray60',
+        color: 'buttonColor.secondary.hover',
+        bg: 'buttonBackground.secondary.hover',
       },
     },
     ghost: {
-      color: 'secondary',
+      color: 'buttonColor.ghost',
       border: '1px solid',
-      outlineColor: 'gray70',
+      outlineColor: 'buttonBorder.ghost',
       '&:hover': {
-        color: 'secondary',
-        bg: 'gray40',
+        color: 'buttonColor.ghost.hover',
+        bg: 'buttonBackground.ghost.hover',
       },
     },
     text: {
-      color: 'secondary',
+      color: 'buttonColor.text',
       '&:hover': {
-        color: 'secondary',
-        outlineColor: 'gray70',
-        bg: 'gray40',
+        color: 'buttonColor.text.hover',
+        outlineColor: 'buttonBorder.text.hover',
+        bg: 'buttonBackground.text.hover',
       },
     },
     menu: {
-      color: 'secondary',
-      bg: 'background',
+      color: 'buttonColor.menu',
+      bg: 'buttonBackground.menu',
       '&:hover': {
-        color: 'background',
-        bg: 'gray60',
+        color: 'buttonColor.menu.hover',
+        bg: 'buttonBackground.menu.hover',
       },
     },
   },

@@ -9,8 +9,8 @@ export const Message: Theme['components']['Message'] = {
       pb: 'small',
       px: 'small',
       fontSize: 'xxsmall',
-      color: 'gray70',
-      bg: 'gray10',
+      color: 'messageColor.base',
+      bg: 'messageBackground.base',
     },
     title: {
       lineHeight: 'large',
@@ -28,26 +28,26 @@ export const Message: Theme['components']['Message'] = {
   variant: {
     warning: {
       container: {
-        borderColor: 'warning',
+        borderColor: 'messageBorder.warning',
       },
       icon: {
-        color: 'warning',
+        color: 'messageIcon.warning',
       },
     },
     error: {
       container: {
-        borderColor: 'error',
+        borderColor: 'messageBorder.error',
       },
       icon: {
-        color: 'error',
+        color: 'messageIcon.error',
       },
     },
     info: {
       container: {
-        borderColor: 'info',
+        borderColor: 'messageBorder.info',
       },
       icon: {
-        color: 'info',
+        color: 'messageIcon.info',
       },
     },
   },

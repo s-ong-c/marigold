@@ -5,13 +5,13 @@ export const ListBox: Theme['components']['ListBox'] = {
     container: {
       mt: 2,
 
-      bg: 'gray00',
+      bg: 'listBoxBackground.base',
       border: '1px solid',
-      borderColor: 'gray40',
+      borderColor: 'listBoxBorder.base',
       borderRadius: 'small',
 
       '&:error': {
-        borderColor: 'error',
+        borderColor: 'listBoxBorder.base.error',
       },
     },
 
@@ -26,22 +26,22 @@ export const ListBox: Theme['components']['ListBox'] = {
       cursor: 'pointer',
 
       '&:focus': {
-        bg: 'orange20',
+        bg: 'listBoxBackground.option.focus',
       },
 
       '&:selected': {
-        color: 'gray00',
-        bg: 'orange60',
+        color: 'listBoxColor.option.selected',
+        bg: 'listBoxBackground.option.selected',
       },
 
       '&:disabled': {
         cursor: 'not-allowed',
-        color: 'gray40',
+        color: 'listBoxColor.option.disabled',
       },
     },
 
     sectionTitle: {
-      color: 'gray50',
+      color: 'listBoxColor.sectionTitle',
       fontSize: 'xxsmall',
       pt: 'xsmall',
       px: 'xsmall',
@@ -52,7 +52,7 @@ export const ListBox: Theme['components']['ListBox'] = {
 
       '&:nth-child(n+1)': {
         borderTop: '1px solid',
-        borderColor: 'gray40',
+        borderColor: 'listBoxBorder.section',
       },
     },
   },

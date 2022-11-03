@@ -10,7 +10,7 @@ export default {
       control: {
         type: 'select',
       },
-      options: ['base', 'bold'],
+      options: ['base', 'bold', 'section'],
       description: 'Thick or thin line',
       table: {
         defaultValue: {

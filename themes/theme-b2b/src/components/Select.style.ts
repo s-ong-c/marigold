@@ -1,5 +1,6 @@
 import type { Theme } from '@marigold/components';
 import { colors } from '../colors';
+import { semanticColors } from '../semantic-colors';
 
 export const Select: Theme['components']['Select'] = {
   base: {
@@ -9,39 +10,39 @@ export const Select: Theme['components']['Select'] = {
 
       px: 'xsmall',
 
-      bg: 'gray00',
+      bg: 'selectBackground.base',
       borderRadius: 'small',
       border: '1px solid',
-      borderColor: 'gray40',
+      borderColor: 'selectBorder.base',
 
       outline: 'none',
       cursor: 'pointer',
 
       '&:hover': {
-        borderColor: 'gray50',
+        borderColor: 'selectBorder.base.hover',
       },
 
       '&:disabled': {
-        color: 'gray40',
+        color: 'selectColor.base.disabled',
 
-        bg: 'gray20',
-        borderColor: 'gray40',
+        bg: 'selectBackground.base.disabled',
+        borderColor: 'selectBorder.base.disabled',
 
         cursor: 'not-allowed',
       },
 
       '&:focus-visible': {
-        borderColor: 'orange60',
-        boxShadow: `0 0 0 1px ${colors.orange60}`,
+        borderColor: 'selectBorder.base.focusVisible',
+        boxShadow: `0 0 0 1px ${semanticColors.selectBoxShadow.base.foucsVisible}`,
       },
 
       '&:expanded': {
-        bg: 'gray20',
-        borderColor: 'gray40',
+        bg: 'selectBackground.base.expanded',
+        borderColor: 'selectBorder.base.expanded',
       },
 
       '&:error': {
-        borderColor: 'error',
+        borderColor: 'selectBorder.base.error',
       },
     },
   },

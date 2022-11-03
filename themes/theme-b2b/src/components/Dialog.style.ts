@@ -1,4 +1,5 @@
 import type { Theme } from '@marigold/components';
+import { semanticColors } from '../semantic-colors';
 
 export const Dialog: Theme['components']['Dialog'] = {
   base: {
@@ -6,7 +7,7 @@ export const Dialog: Theme['components']['Dialog'] = {
       // Make sure to have correct font
       fontFamily: 'body',
       borderRadius: '2px',
-      boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+      boxShadow: `0px 4px 4px ${semanticColors.dialogBoxShadow.base}`,
       pl: 'large',
       pr: 'large',
       pb: 'large',

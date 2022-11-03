@@ -13,9 +13,9 @@ export const Badge: Theme['components']['Badge'] = {
   },
   variant: {
     info: {
-      color: 'blue10',
-      borderColor: 'blue80',
-      bg: 'blue70',
+      color: 'badgeColor.info',
+      borderColor: 'badgeBorder.info',
+      bg: 'badgeBackground.info',
     },
   },
 };

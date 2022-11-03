@@ -1,14 +1,15 @@
 import type { Theme } from '@marigold/components';
 import { colors } from '../colors';
+import { semanticColors } from '../semantic-colors';
 
 export const Input: Theme['components']['Input'] = {
   base: {
-    color: 'text',
+    color: 'inputColor.base',
     lineHeight: 'large',
 
-    bg: 'gray00',
+    bg: 'inputBackground.base',
     border: '1px solid',
-    borderColor: 'gray40',
+    borderColor: 'inputBorder.base',
     borderRadius: 'small',
     outline: 'none',
 
@@ -16,23 +17,23 @@ export const Input: Theme['components']['Input'] = {
     px: 'xsmall',
 
     '&:hover': {
-      borderColor: 'gray50',
+      borderColor: 'inputBorder.base.hover',
     },
 
     '&:focus': {
-      borderColor: 'orange60',
-      boxShadow: `0 0 0 1px ${colors.orange60}`,
+      borderColor: 'inputBorder.base.focus',
+      boxShadow: `0 0 0 1px ${semanticColors.inputBoxShadow.base.focus}`,
     },
 
     '&:disabled': {
-      bg: 'gray20',
-      color: 'gray40',
+      bg: 'inputBackground.base.disabled',
+      color: 'inputColor.base.disabled',
       cursor: 'not-allowed',
     },
 
     '&:error': {
-      borderColor: 'red60',
-      boxShadow: `0 0 0 1px ${colors.red60}`,
+      borderColor: 'inputBorder.base.error',
+      boxShadow: `0 0 0 1px ${semanticColors.inputBoxShadow.base.error}`,
     },
 
     '&:in-group': {

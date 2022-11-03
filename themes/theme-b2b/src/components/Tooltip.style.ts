@@ -9,9 +9,9 @@ export const Tooltip: Theme['components']['Tooltip'] = {
       lineHeight: 'small',
 
       border: '1px solid',
-      borderColor: 'blue70',
+      borderColor: 'toolTipBorder.base.container',
       borderRadius: 'large',
-      bg: 'blue10',
+      bg: 'toolTipBackground.base.container',
 
       p: 'xsmall',
 
@@ -34,7 +34,7 @@ export const Tooltip: Theme['components']['Tooltip'] = {
 
     arrow: {
       borderWidth: arrowSize,
-      borderTopColor: 'blue70',
+      borderTopColor: 'toolTipBorder.base.arrow',
 
       '::after': {
         content: '""',
@@ -48,7 +48,7 @@ export const Tooltip: Theme['components']['Tooltip'] = {
         borderBottomColor: 'transparent',
 
         borderWidth: arrowSize - 1,
-        borderTopColor: 'blue10',
+        borderTopColor: 'toolTipBorder.base.arrow.after',
 
         left: `-${arrowSize - 1}px`,
         // weird but looks better

@@ -1,13 +1,14 @@
 import { Theme } from '@marigold/components';
 import { colors } from '../colors';
+import { semanticColors } from '../semantic-colors';
 
 export const TextArea: Theme['components']['TextArea'] = {
   base: {
-    color: 'text',
+    color: 'textAreaColor.base',
     lineHeight: 'large',
 
     border: '1px solid',
-    borderColor: 'gray40',
+    borderColor: 'textAreaBorder.base',
     borderRadius: 'small',
     outline: 'none',
 
@@ -15,7 +16,7 @@ export const TextArea: Theme['components']['TextArea'] = {
     px: 'xsmall',
 
     '&:hover': {
-      borderColor: 'gray50',
+      borderColor: 'textAreaBorder.base.hover',
     },
 
     '&:focus': {
@@ -24,14 +25,14 @@ export const TextArea: Theme['components']['TextArea'] = {
     },
 
     '&:disabled': {
-      bg: 'gray20',
+      bg: 'textAreaBackground.base.disabled',
       color: 'gray40',
       cursor: 'not-allowed',
     },
 
     '&:error': {
-      borderColor: 'red60',
-      boxShadow: `0 0 0 1px ${colors.red60}`,
+      borderColor: 'textAreaBorder.base.error',
+      boxShadow: `0 0 0 1px ${semanticColors.textAreaBoxShadow.base.error}`,
     },
   },
 };

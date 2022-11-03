@@ -6,38 +6,38 @@ export const Checkbox: Theme['components']['Checkbox'] = {
       fontSize: 'xsmall',
 
       '&:disabled': {
-        color: 'gray40',
+        color: 'checkBoxColor.base.disabled',
       },
     },
     checkbox: {
       borderRadius: 'small',
-      borderColor: 'gray40',
+      borderColor: 'checkBoxBorder.checkbox',
 
       '&:hover': {
-        borderColor: 'gray50',
+        borderColor: 'checkBoxBorder.checkbox.hover',
       },
 
       '&:focus': {
         outline: '2px solid',
-        outlineColor: 'orange60',
+        outlineColor: 'checkBoxOutline.checkbox.focus',
         outlineOffset: 3,
       },
 
       '&:checked': {
-        color: 'white',
-        borderColor: 'orange80',
-        bg: 'primary',
+        color: 'checkBoxColor.checkbox.checked',
+        borderColor: 'checkBoxBorder.checkbox.checked',
+        bg: 'checkBoxBackground.checkbox.checked',
       },
 
       '&:indeterminate': {
-        color: 'white',
-        borderColor: 'orange80',
-        bg: 'primary',
+        color: 'checkBoxColor.checkbox.indeterminate',
+        borderColor: 'checkBoxBorder.checkbox.indeterminate',
+        bg: 'checkBoxBackground.checkbox.indeterminate',
       },
 
       '&:disabled': {
-        bg: 'gray30',
-        borderColor: 'gray40',
+        bg: 'checkBoxBackground.checkbox.disabled',
+        borderColor: 'checkBoxBorder.checkbox.disabled',
       },
     },
   },

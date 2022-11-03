@@ -3,9 +3,9 @@ import type { Theme } from '@marigold/components';
 export const Menu: Theme['components']['Menu'] = {
   base: {
     container: {
-      bg: 'gray00',
+      bg: 'menuBackground.base',
       border: '1px solid',
-      borderColor: 'gray40',
+      borderColor: 'menuBorder.base',
       borderRadius: 'small',
     },
     item: {
@@ -14,7 +14,7 @@ export const Menu: Theme['components']['Menu'] = {
       cursor: 'pointer',
 
       '&:focus': {
-        bg: 'gray20',
+        bg: 'menuBackground.item.focus',
       },
     },
   },
