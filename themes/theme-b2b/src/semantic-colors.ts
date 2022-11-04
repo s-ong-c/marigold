@@ -1,4 +1,3 @@
-import { color } from '@marigold/tokens';
 import { colors } from './colors';
 
 const themeColors = {
@@ -13,16 +12,46 @@ const themeColors = {
   success: colors.green70,
 };
 
-const primrayColor = {
-  hover: colors.orange40,
-};
-
 const secondaryColor = {
   hover: colors.gray60,
 };
 
-const disabledColor = {
-  color: colors.gray40,
+export const primaryColors = {
+  primary: {
+    __default: themeColors.primary,
+    hover: {
+      __default: colors.orange40,
+    },
+  },
+};
+
+export const secondaryColors = {
+  primary: {
+    __default: themeColors.secondary,
+
+    hover: {
+      __default: colors.gray60,
+    },
+  },
+};
+
+export const disbaledColors = {
+  disabled: {
+    __default: colors.gray40,
+
+    weak: {
+      __default: colors.gray30,
+    },
+    weaker: {
+      __default: colors.gray20,
+    },
+  },
+};
+
+export const focusColors = {
+  focus: {
+    __default: colors.orange60,
+  },
 };
 
 const boxShadow = {
@@ -53,13 +82,13 @@ export const semanticColors = {
         __default: themeColors.primary,
       },
       disabled: {
-        __default: colors.gray20,
+        __default: disbaledColors.disabled.weaker,
       },
     },
     primary: {
       __default: themeColors.primary,
       hover: {
-        __default: primrayColor.hover,
+        __default: primaryColors.primary.hover,
       },
     },
     secondary: {
@@ -92,7 +121,7 @@ export const semanticColors = {
   buttonColor: {
     base: {
       disabled: {
-        __default: disabledColor.color,
+        __default: disbaledColors.disabled,
       },
     },
     primary: {
@@ -156,7 +185,7 @@ export const semanticColors = {
   checkBoxColor: {
     base: {
       disabled: {
-        __default: colors.gray40,
+        __default: disbaledColors.disabled,
       },
     },
     checkbox: {
@@ -178,7 +207,7 @@ export const semanticColors = {
         __default: themeColors.primary,
       },
       disabled: {
-        __default: colors.gray30,
+        __default: disbaledColors.disabled.weak,
       },
     },
   },
@@ -196,7 +225,7 @@ export const semanticColors = {
         __default: colors.orange80,
       },
       disabled: {
-        __default: colors.gray30,
+        __default: disbaledColors.disabled.weak,
       },
     },
   },
@@ -235,7 +264,7 @@ export const semanticColors = {
     base: {
       __default: themeColors.text,
       disabled: {
-        __default: colors.gray40,
+        __default: disbaledColors.disabled,
       },
     },
   },
@@ -244,7 +273,7 @@ export const semanticColors = {
     base: {
       __default: colors.gray00,
       disabled: {
-        __default: colors.gray20,
+        __default: disbaledColors.disabled.weaker,
       },
     },
   },
@@ -275,7 +304,7 @@ export const semanticColors = {
     base: {
       __default: themeColors.text,
       disabled: {
-        __default: colors.gray40,
+        __default: disbaledColors.disabled,
       },
     },
   },
@@ -321,7 +350,7 @@ export const semanticColors = {
         __default: colors.gray00,
       },
       disabled: {
-        __default: colors.gray40,
+        __default: disbaledColors.disabled,
       },
     },
     sectionTitle: {
@@ -384,7 +413,7 @@ export const semanticColors = {
   numberFieldBackground: {
     base: {
       disabled: {
-        __default: colors.gray20,
+        __default: disbaledColors.disabled.weaker,
       },
     },
     stepper: {
@@ -440,14 +469,14 @@ export const semanticColors = {
         __default: themeColors.primary,
       },
       disabled: {
-        __default: colors.gray30,
+        __default: disbaledColors.disabled.weak,
       },
     },
   },
   radioColor: {
     base: {
       disabled: {
-        __default: disabledColor.color,
+        __default: disbaledColors.disabled,
       },
     },
     radio: {
@@ -466,7 +495,7 @@ export const semanticColors = {
         __default: colors.orange80,
       },
       disabled: {
-        __default: colors.gray40,
+        __default: disbaledColors.disabled,
       },
     },
   },
@@ -483,7 +512,7 @@ export const semanticColors = {
     base: {
       __default: colors.gray00,
       disabled: {
-        __default: colors.gray20,
+        __default: disbaledColors.disabled.weaker,
       },
       expanded: {
         __default: colors.gray20,
@@ -498,7 +527,7 @@ export const semanticColors = {
         __default: colors.gray50,
       },
       disabled: {
-        __default: colors.gray40,
+        __default: disbaledColors.disabled,
       },
       focusVisible: {
         __default: colors.orange60,
@@ -515,7 +544,7 @@ export const semanticColors = {
   selectColor: {
     base: {
       disabled: {
-        __default: colors.gray40,
+        __default: disbaledColors.disabled,
       },
     },
   },
@@ -534,7 +563,7 @@ export const semanticColors = {
       thumb: {
         __default: colors.gray00,
         disabled: {
-          __default: colors.gray40,
+          __default: disbaledColors.disabled,
         },
       },
     },
@@ -559,7 +588,7 @@ export const semanticColors = {
           __default: colors.orange60,
         },
         disabled: {
-          __default: colors.gray40,
+          __default: disbaledColors.disabled,
         },
       },
     },
@@ -575,12 +604,12 @@ export const semanticColors = {
         },
 
         disabled: {
-          __default: colors.gray30,
+          __default: disbaledColors.disabled.weak,
         },
       },
       thumb: {
         disabled: {
-          __default: colors.gray20,
+          __default: disbaledColors.disabled.weaker,
         },
       },
     },
@@ -590,7 +619,7 @@ export const semanticColors = {
     base: {
       track: colors.gray40,
       checked: colors.orange80,
-      disabled: colors.gray40,
+      disabled: disbaledColors.disabled,
     },
   },
 
@@ -648,7 +677,7 @@ export const semanticColors = {
   textAreaBackground: {
     base: {
       disabled: {
-        __default: colors.gray20,
+        __default: disbaledColors.disabled.weaker,
       },
     },
   },
@@ -657,7 +686,7 @@ export const semanticColors = {
     base: {
       __default: themeColors.text,
       disabled: {
-        __default: colors.gray40,
+        __default: disbaledColors.disabled,
       },
     },
   },
