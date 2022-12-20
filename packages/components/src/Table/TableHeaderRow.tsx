@@ -3,6 +3,7 @@ import { useTableHeaderRow } from '@react-aria/table';
 import { GridNode } from '@react-types/grid';
 
 import { useTableContext } from './Context';
+import { Box } from '@marigold/system';
 
 // Props
 // ---------------
@@ -20,8 +21,8 @@ export const TableHeaderRow = ({ item, children }: TableHeaderRowProps) => {
   const { rowProps } = useTableHeaderRow({ node: item }, state, ref);
 
   return (
-    <tr {...rowProps} ref={ref}>
+    <Box __baseCSS={{ display: 'contents' }} {...rowProps} ref={ref}>
       {children}
-    </tr>
+    </Box>
   );
 };

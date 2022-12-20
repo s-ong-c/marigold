@@ -45,7 +45,6 @@ export const TableSelectAllCell = ({ column }: TableSelectAllCell) => {
 
   return (
     <Box
-      as="th"
       ref={ref}
       __baseCSS={{
         textAlign: 'center',

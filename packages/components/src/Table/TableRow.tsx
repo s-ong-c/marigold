@@ -55,9 +55,9 @@ export const TableRow = ({ children, row }: TableRowProps) => {
 
   return (
     <Box
-      as="tr"
       ref={ref}
       __baseCSS={{
+        display: 'contents',
         cursor: !interactive ? 'text' : disabled ? 'default' : 'pointer',
       }}
       css={styles}

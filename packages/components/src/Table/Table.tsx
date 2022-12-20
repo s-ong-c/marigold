@@ -68,26 +68,27 @@ export const Table: Table = ({
       props.selectionBehavior !== 'replace',
   });
   const { gridProps } = useTable(props, state, tableRef);
+  const { collection } = state;
 
   const styles = useComponentStyles(
     'Table',
     { variant, size },
     { parts: ['table', 'header', 'row', 'cell'] }
   );
+  const gridTemplateColumns =
+    selectionMode === 'multiple'
+      ? `min-content repeat(${collection.columnCount - 1}, 1fr)`
+      : `repeat(${collection.columnCount}, 1fr)`;
 
-  const { collection } = state;
-
+  console.log(collection.columnCount);
   return (
     <TableContext.Provider value={{ state, interactive, styles }}>
       <Box
-        as="table"
         ref={tableRef}
         __baseCSS={{
-          display: stretch ? 'table' : 'block',
-          width: stretch ? '100%' : undefined,
-          borderCollapse: 'collapse',
+          display: 'grid',
           overflow: 'auto',
-          whiteSpace: 'nowrap',
+          gridTemplateColumns,
         }}
         css={styles.table}
         {...gridProps}

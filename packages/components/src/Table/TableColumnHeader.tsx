@@ -63,10 +63,12 @@ export const TableColumnHeader = ({ column }: TableColumnHeaderProps) => {
 
   return (
     <Box
-      as="th"
-      colSpan={column.colspan}
       ref={ref}
-      __baseCSS={{ cursor: 'default' }}
+      __baseCSS={{
+        cursor: 'default',
+        fontWeight: '700',
+        gridColumn: `span ${column.colspan}`,
+      }}
       css={styles.header}
       {...mergeProps(columnHeaderProps, hoverProps, focusProps)}
       {...stateProps}

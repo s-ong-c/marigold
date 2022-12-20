@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import { useTableRowGroup } from '@react-aria/table';
+import { Box } from '@marigold/system';
 
 export interface TableBodyProps {
   children: ReactNode;
@@ -7,5 +8,9 @@ export interface TableBodyProps {
 
 export const TableBody = ({ children }: TableBodyProps) => {
   const { rowGroupProps } = useTableRowGroup();
-  return <tbody {...rowGroupProps}>{children}</tbody>;
+  return (
+    <Box __baseCSS={{ display: 'contents' }} {...rowGroupProps}>
+      {children}
+    </Box>
+  );
 };

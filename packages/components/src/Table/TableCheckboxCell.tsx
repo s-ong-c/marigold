@@ -32,10 +32,9 @@ export const TableCheckboxCell = ({ cell }: TableCheckboxCellProps) => {
 
   const { focusProps, isFocusVisible } = useFocusRing();
   const stateProps = useStateProps({ disabled, focusVisible: isFocusVisible });
-
+  console.log(stateProps);
   return (
     <Box
-      as="td"
       ref={ref}
       __baseCSS={{
         textAlign: 'center',

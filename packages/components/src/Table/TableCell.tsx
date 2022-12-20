@@ -41,7 +41,6 @@ export const TableCell = ({ cell }: TableCellProps) => {
 
   return (
     <Box
-      as="td"
       ref={ref}
       css={styles.cell}
       {...mergeProps(cellProps, focusProps)}
