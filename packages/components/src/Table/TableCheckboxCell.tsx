@@ -32,7 +32,7 @@ export const TableCheckboxCell = ({ cell }: TableCheckboxCellProps) => {
 
   const { focusProps, isFocusVisible } = useFocusRing();
   const stateProps = useStateProps({ disabled, focusVisible: isFocusVisible });
-  console.log(stateProps);
+
   return (
     <Box
       ref={ref}

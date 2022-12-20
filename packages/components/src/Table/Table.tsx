@@ -80,7 +80,6 @@ export const Table: Table = ({
       ? `min-content repeat(${collection.columnCount - 1}, 1fr)`
       : `repeat(${collection.columnCount}, 1fr)`;
 
-  console.log(collection.columnCount);
   return (
     <TableContext.Provider value={{ state, interactive, styles }}>
       <Box
