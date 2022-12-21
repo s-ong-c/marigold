@@ -53,11 +53,17 @@ export const TableRow = ({ children, row }: TableRowProps) => {
     active: isPressed,
   });
 
+  const gridTemplateColumns =
+    state.selectionManager.selectionMode === 'multiple'
+      ? `min-content repeat(${state.collection.columnCount - 1}, 1fr)`
+      : `repeat(${state.collection.columnCount}, 1fr)`;
   return (
     <Box
       ref={ref}
       __baseCSS={{
-        display: 'contents',
+        display: 'grid',
+        gridTemplateColumns,
+
         cursor: !interactive ? 'text' : disabled ? 'default' : 'pointer',
       }}
       css={styles}

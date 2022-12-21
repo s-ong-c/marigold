@@ -82,42 +82,43 @@ export const Table: Table = ({
 
   return (
     <TableContext.Provider value={{ state, interactive, styles }}>
-      <Box
-        ref={tableRef}
-        __baseCSS={{
-          display: 'grid',
-          overflow: 'auto',
-          gridTemplateColumns,
-        }}
-        css={styles.table}
-        {...gridProps}
-      >
-        <TableHeader>
-          {collection.headerRows.map(headerRow => (
-            <TableHeaderRow key={headerRow.key} item={headerRow}>
-              {[...headerRow.childNodes].map(column =>
-                column.props?.isSelectionCell ? (
-                  <TableSelectAllCell key={column.key} column={column} />
-                ) : (
-                  <TableColumnHeader key={column.key} column={column} />
-                )
-              )}
-            </TableHeaderRow>
-          ))}
-        </TableHeader>
-        <TableBody>
-          {[...collection.body.childNodes].map(row => (
-            <TableRow key={row.key} row={row}>
-              {[...row.childNodes].map(cell =>
-                cell.props?.isSelectionCell ? (
-                  <TableCheckboxCell key={cell.key} cell={cell} />
-                ) : (
-                  <TableCell key={cell.key} cell={cell} />
-                )
-              )}
-            </TableRow>
-          ))}
-        </TableBody>
+      <Box __baseCSS={{ display: 'grid' }}>
+        <Box
+          ref={tableRef}
+          __baseCSS={{
+            overflow: 'auto',
+            gridTemplateColumns,
+          }}
+          css={styles.table}
+          {...gridProps}
+        >
+          <TableHeader>
+            {collection.headerRows.map(headerRow => (
+              <TableHeaderRow key={headerRow.key} item={headerRow}>
+                {[...headerRow.childNodes].map(column =>
+                  column.props?.isSelectionCell ? (
+                    <TableSelectAllCell key={column.key} column={column} />
+                  ) : (
+                    <TableColumnHeader key={column.key} column={column} />
+                  )
+                )}
+              </TableHeaderRow>
+            ))}
+          </TableHeader>
+          <TableBody>
+            {[...collection.body.childNodes].map(row => (
+              <TableRow key={row.key} row={row}>
+                {[...row.childNodes].map(cell =>
+                  cell.props?.isSelectionCell ? (
+                    <TableCheckboxCell key={cell.key} cell={cell} />
+                  ) : (
+                    <TableCell key={cell.key} cell={cell} />
+                  )
+                )}
+              </TableRow>
+            ))}
+          </TableBody>
+        </Box>
       </Box>
     </TableContext.Provider>
   );

@@ -9,7 +9,12 @@ export interface TableBodyProps {
 export const TableBody = ({ children }: TableBodyProps) => {
   const { rowGroupProps } = useTableRowGroup();
   return (
-    <Box __baseCSS={{ display: 'contents' }} {...rowGroupProps}>
+    <Box
+      __baseCSS={{
+        display: 'contents',
+      }}
+      {...rowGroupProps}
+    >
       {children}
     </Box>
   );
