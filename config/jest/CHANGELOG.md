@@ -1,5 +1,11 @@
 # @marigold/jest-config
 
+## 1.1.0
+
+### Minor Changes
+
+- [#2801](https://github.com/marigold-ui/marigold/pull/2801) [`9e682b73d`](https://github.com/marigold-ui/marigold/commit/9e682b73dafd03ca59df1f4aba71cc284a7df296) Thanks [@sebald](https://github.com/sebald)! - refa: remove ts-jest dependency
+
 ## 1.0.10
 
 ### Patch Changes

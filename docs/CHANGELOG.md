@@ -1,5 +1,19 @@
 # @marigold/docs
 
+## 5.2.0
+
+### Minor Changes
+
+- [#2805](https://github.com/marigold-ui/marigold/pull/2805) [`c0609c0b3`](https://github.com/marigold-ui/marigold/commit/c0609c0b32bb8075fdeacf88f9c6ce5d8fdf781e) Thanks [@sebald](https://github.com/sebald)! - feat: introduce `<Inset>` component
+
+### Patch Changes
+
+- Updated dependencies [[`f11e2d7db`](https://github.com/marigold-ui/marigold/commit/f11e2d7dbb3d6b4ee4b8651f48b52736f64fd778), [`c0609c0b3`](https://github.com/marigold-ui/marigold/commit/c0609c0b32bb8075fdeacf88f9c6ce5d8fdf781e)]:
+  - @marigold/system@5.2.0
+  - @marigold/components@5.2.0
+  - @marigold/icons@1.2.1
+  - @marigold/theme-b2b@20.0.0
+
 ## 5.1.0
 
 ### Minor Changes
